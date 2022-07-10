@@ -18,7 +18,7 @@ export class TokenInterceptor implements HttpInterceptor {
 	): Observable<HttpEvent<any>> {
 		request = request.clone({
 			setHeaders: {
-				Authorization: `Bearer ${localStorage.getItem("token")}`,
+				Authorization: `Token ${localStorage.getItem("token")}`,
 			},
 		});
 		return next.handle(request).pipe(
@@ -26,7 +26,7 @@ export class TokenInterceptor implements HttpInterceptor {
 				if (error instanceof HttpErrorResponse && error.status === 401) {
 					this.router.navigate(["/auth/login"]);
 				}
-				return throwError(() => new error());
+				return throwError(() => error);
 			})
 		);
 	}

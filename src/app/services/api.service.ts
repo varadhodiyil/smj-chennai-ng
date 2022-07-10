@@ -18,4 +18,12 @@ export class ApiService {
 			localStorage.getItem("token") !== undefined
 		);
 	}
+
+	saveDocument(data: {}) {
+		return this.http.post(this.appConfig.DOCUMENT, data);
+	}
+
+	getProfile() {
+		return this.http.get(this.appConfig.PROFILE);
+	}
 }
