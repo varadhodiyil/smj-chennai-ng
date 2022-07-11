@@ -31,6 +31,7 @@
 					class="form-control col-9 form-control-user"
 					formControlName="docket_number"
 					placeholder="Docket Number"
+					(blur)="getDocument()"
 				/>
 			</div>
 		</div>
@@ -152,7 +153,6 @@
 							type="radio"
 							value="Same State"
 							class="form-check-input"
-							(change)="calculateGST()"
 						/>Same State</label
 					>
 				</div>
@@ -163,7 +163,6 @@
 							formControlName="service_type"
 							class="form-check-input"
 							value="Other State"
-							(change)="calculateGST()"
 						/>Other State</label
 					>
 				</div>
@@ -264,6 +263,10 @@
 					placeholder="Total"
 				/>
 			</div>
+		</div>
+
+		<div class="row col-12">
+			<p class="text-center col-12 text-danger">{{ message }}</p>
 		</div>
 
 		<button

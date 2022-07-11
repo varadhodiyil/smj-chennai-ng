@@ -7,4 +7,7 @@ export class AppConfig {
 	public DOCUMENT = `${this.APP_DOMAIN}/documents/`;
 
 	public PROFILE = `${this.APP_DOMAIN}/profile/`;
+	public PARTY = `${this.APP_DOMAIN}/party/`;
+
+	public CHARGE = `${this.APP_DOMAIN}/charges/`;
 }

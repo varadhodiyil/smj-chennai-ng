@@ -12,7 +12,6 @@ import { ApiService } from "./api.service";
 export class AuthGuard implements CanActivate {
 	constructor(private authService: ApiService) {}
 	canActivate(next: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
-		console.log("CanActivate called");
 		return this.authService.isLoggedIn();
 	}
 }

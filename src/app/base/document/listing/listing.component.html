@@ -1,0 +1,29 @@
+<div class="row container">
+	<div class="col-12">
+		<table datatable [dtOptions]="dtOptions" class="row-border hover col-12">
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>Party</th>
+					<th>Weight</th>
+					<th>Station</th>
+					<th>Charge</th>
+					<th>Other Charge</th>
+					<th>Paid</th>
+					<th>Dispatch</th>
+					<th>Bill Status</th>
+					<th>Total</th>
+					<th>View</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr *ngFor="let person of documents">
+					<td>{{ person.id }}</td>
+					<td>{{ person.party }}</td>
+					<td>{{ person.total }}</td>
+					<td><button class="btn btn-primary">View</button></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>

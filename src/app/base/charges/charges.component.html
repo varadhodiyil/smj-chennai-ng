@@ -1,0 +1,171 @@
+<div class="row container">
+	<div class="col-2"></div>
+	<form class="form-inline col-9" [formGroup]="chargesForm">
+		<div class="form-group row col-12 mb-3">
+			<div class="col-sm-12 row mb-3 mb-sm-0">
+				<label class="col-3">Document Number</label>
+				<input
+					class="form-control col-9 basicAutoComplete"
+					type="number"
+					formControlName="document"
+					autocomplete="off"
+				/>
+			</div>
+		</div>
+
+		<div class="form-group row col-12 mb-3">
+			<div class="col-sm-12 row mb-3 mb-sm-0">
+				<label class="col-3">Party</label>
+				<input
+					class="form-control col-9 basicAutoComplete"
+					type="text"
+					autocomplete="off"
+					formControlName="party"
+				/>
+			</div>
+		</div>
+
+		<div class="form-group row col-12 mb-3">
+			<div class="col-sm-12 row mb-3 mb-sm-0">
+				<label class="col-3">Payment Date</label>
+				<input
+					type="date"
+					class="form-control col-9 form-control-user"
+					formControlName="lr_date"
+					placeholder="Payment Date"
+					[max]="now"
+				/>
+			</div>
+		</div>
+
+		<div class="form-group row col-12 mb-3">
+			<div class="col-sm-12 row mb-3 mb-sm-0">
+				<label class="col-3">Dispatch Expense</label>
+				<input
+					type="number"
+					class="form-control col-9 form-control-user"
+					formControlName="dispatch_expense"
+					placeholder="Dispatch Expense"
+				/>
+			</div>
+		</div>
+		<div class="form-group row col-12 mb-3">
+			<div class="col-sm-12 row mb-3 mb-sm-0">
+				<label class="col-3">Dispatch Paid On</label>
+				<input
+					type="date"
+					class="form-control col-9 form-control-user"
+					formControlName="dispatch_paid_on"
+					placeholder="Dispatch Paid On"
+					[max]="now"
+				/>
+			</div>
+		</div>
+		<div class="form-group row col-12 mb-3">
+			<div class="col-sm-12 row mb-3 mb-sm-0">
+				<label class="col-3">Door Delivery Expense</label>
+				<input
+					type="number"
+					class="form-control col-9 form-control-user"
+					formControlName="door_delivery_expense"
+					placeholder="Door Delivery Expense"
+				/>
+			</div>
+		</div>
+		<div class="form-group row col-12 mb-3">
+			<div class="col-sm-12 row mb-3 mb-sm-0">
+				<label class="col-3">Door Delivery Paid On</label>
+				<input
+					type="date"
+					class="form-control col-9 form-control-user"
+					formControlName="door_delivery_paid_on"
+					placeholder="Door Delivery Paid On"
+					[max]="now"
+				/>
+			</div>
+		</div>
+
+		<div class="form-group row col-12 mb-3">
+			<div class="col-sm-12 row mb-3 mb-sm-0">
+				<label class="col-3">Pay Method</label>
+				<input
+					type="text"
+					class="form-control col-9 form-control-user"
+					formControlName="pay_method"
+					placeholder="Payment Method"
+				/>
+			</div>
+		</div>
+
+		<div class="form-group row col-12 mb-3">
+			<div class="col-sm-12 row mb-3 mb-sm-0">
+				<label class="col-3">Any Other Expense</label>
+				<input
+					type="number"
+					class="form-control col-9 form-control-user"
+					formControlName="any_other_expense"
+					placeholder="Any Other Expense"
+				/>
+			</div>
+		</div>
+		<div class="form-group row col-12 mb-3">
+			<div class="col-sm-12 row mb-3 mb-sm-0">
+				<label class="col-3">Any Other Expense Paid On</label>
+				<input
+					type="date"
+					class="form-control col-9 form-control-user"
+					formControlName="any_other_expense_paid_on"
+					placeholder="Payment Date"
+					[max]="now"
+				/>
+			</div>
+		</div>
+		<div class="form-group row col-12 mb-3">
+			<div class="col-sm-12 row mb-3 mb-sm-0">
+				<label class="col-3">Any Other Expense Payment Method</label>
+				<input
+					type="text"
+					class="form-control col-9 form-control-user"
+					formControlName="any_other_expense_pay_method"
+					placeholder="Payment Date"
+					[max]="now"
+				/>
+			</div>
+		</div>
+		<div class="form-group row col-12 mb-3">
+			<div class="col-sm-12 row mb-3 mb-sm-0">
+				<label class="col-3">Total</label>
+				<input
+					type="number"
+					class="form-control col-9 form-control-user"
+					formControlName="total"
+					placeholder="Payment Date"
+				/>
+			</div>
+		</div>
+
+		<div class="form-group row col-12 mb-3">
+			<div class="col-sm-12 row mb-3 mb-sm-0">
+				<label class="col-3">Paid</label>
+				<input
+					type="number"
+					class="form-control col-9 form-control-user"
+					formControlName="paid"
+					placeholder="Payment Date"
+				/>
+			</div>
+		</div>
+
+		<div class="row col-12">
+			<p class="text-center col-12 text-danger">{{ message }}</p>
+		</div>
+
+		<button
+			[disabled]="chargesForm.invalid"
+			class="btn btn-primary btn-user my-4 btn-block"
+			(click)="saveCharges()"
+		>
+			Save
+		</button>
+	</form>
+</div>

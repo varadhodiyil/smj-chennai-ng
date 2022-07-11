@@ -1,5 +1,6 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnChanges, OnInit, SimpleChanges } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { ActivatedRoute, ParamMap } from "@angular/router";
 import { ApiService } from "../../services/api.service";
 
 @Component({
@@ -10,7 +11,13 @@ import { ApiService } from "../../services/api.service";
 export class DocumentComponent implements OnInit {
 	documentForm: FormGroup;
 	now = new Date().toJSON().slice(0, 10).replace(/-/g, "-");
-	constructor(private fb: FormBuilder, private apiService: ApiService) {
+	isEdit = false;
+	message = "";
+	constructor(
+		private fb: FormBuilder,
+		private apiService: ApiService,
+		private _route: ActivatedRoute
+	) {
 		this.documentForm = this.fb.group({
 			party: ["", Validators.required],
 			docket_date: ["", Validators.compose([Validators.required])],
@@ -36,12 +43,61 @@ export class DocumentComponent implements OnInit {
 		});
 	}
 
-	ngOnInit(): void {}
-	saveDocument() {
-		this.apiService.saveDocument(this.documentForm.value).subscribe({
-			next: (d) => console.log(d),
-			error: (e) => console.log(e),
+	ngOnInit(): void {
+		this._route.paramMap.subscribe((params: ParamMap) => {
+			this.documentForm.get("docket_number")?.setValue(params.get("id"));
+			this.getDocument();
 		});
+		this.documentForm.get("weight")?.valueChanges.subscribe((d) => {
+			this.calculateGST();
+			this.calculateTotal();
+		});
+		this.documentForm.get("rate")?.valueChanges.subscribe((d) => {
+			this.calculateGST();
+			this.calculateTotal();
+		});
+	}
+	saveDocument() {
+		if (!this.isEdit) {
+			this.apiService.saveDocument(this.documentForm.value).subscribe({
+				next: (d: any) => (this.message = d.message),
+				error: (e) => console.log(e),
+			});
+		}
+		if (this.isEdit) {
+			this.apiService
+				.updateDocument(
+					this.documentForm.controls["docket_number"].value,
+					this.documentForm.value
+				)
+				.subscribe({
+					next: (d: any) => (this.message = d.message),
+					error: (e) => console.log(e),
+				});
+		}
+	}
+
+	getDocument() {
+		if (!this.documentForm.controls["docket_number"].value) {
+			return;
+		}
+		this.apiService
+			.getDocument(this.documentForm.controls["docket_number"].value)
+			.subscribe((d: any) => {
+				if (d.status) {
+					this.isEdit = true;
+					const result = d.result;
+					delete result.id;
+					delete result.created_at;
+					delete result.updated_at;
+					if (result.igst !== 0 || result.igst !== null) {
+						result["service_type"] = "Other State";
+					} else {
+						result["service_type"] = "Same State";
+					}
+					this.documentForm.setValue(result);
+				}
+			});
 	}
 	initialCharge() {
 		const price =
@@ -59,7 +115,8 @@ export class DocumentComponent implements OnInit {
 		this.documentForm.controls["cgst"].setValue(total);
 		this.documentForm.controls["sgst"].setValue(0);
 		this.documentForm.controls["cgst"].setValue(0);
-		this.documentForm.controls["sgst"].setValue(0);
+		this.documentForm.controls["igst"].setValue(0);
+		this.documentForm.controls["round_amt"].setValue(0);
 		if (this.documentForm.controls["service_type"].value === "Same State") {
 			total = (total * 2.5) / 100;
 			const actual = total;
@@ -79,6 +136,7 @@ export class DocumentComponent implements OnInit {
 			this.documentForm.controls["round_amt"].setValue(round);
 			this.documentForm.controls["igst"].setValue(total);
 		}
+		return;
 	}
 	calculateTotal() {
 		const total =
@@ -86,7 +144,6 @@ export class DocumentComponent implements OnInit {
 			this.documentForm.controls["cgst"].value +
 			this.documentForm.controls["igst"].value +
 			this.documentForm.controls["sgst"].value;
-
 		this.documentForm.controls["total"].setValue(total);
 	}
 }
