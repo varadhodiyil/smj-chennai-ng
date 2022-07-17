@@ -55,4 +55,12 @@ export class ApiService {
 	updateCharge(id: string, data: {}) {
 		return this.http.put(`${this.appConfig.CHARGE}${id}`, data);
 	}
+
+	getPartyBalance() {
+		return this.http.get(this.appConfig.DASHBOARD_PARTY);
+	}
+
+	getSummary() {
+		return this.http.get(this.appConfig.DASHBOARD_SUMMARAY);
+	}
 }
