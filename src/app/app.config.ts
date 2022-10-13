@@ -12,4 +12,6 @@ export class AppConfig {
 	public CHARGE = `${this.APP_DOMAIN}/charges/`;
 	public DASHBOARD_PARTY = `${this.APP_DOMAIN}/dashboard/party`;
 	public DASHBOARD_SUMMARAY = `${this.APP_DOMAIN}/dashboard/summary`;
+
+	public BILLS = `${this.APP_DOMAIN}/bills/`;
 }

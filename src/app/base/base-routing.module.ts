@@ -41,6 +41,11 @@ const routes: Routes = [
 				component: ChargesListingComponent,
 			},
 			{
+				path: "bills",
+				loadChildren: () =>
+					import("./bills/bills.module").then((d) => d.BillsModule),
+			},
+			{
 				path: "**",
 				redirectTo: "dashboard",
 			},

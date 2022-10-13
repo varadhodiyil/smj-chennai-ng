@@ -27,7 +27,9 @@ export class LoginComponent implements OnInit {
 		this.apiService.login(this.loginForm?.value).subscribe({
 			next: (d: any) => {
 				localStorage.setItem("token", d.token);
-				this.router.navigate(["/dashboard"]);
+				setTimeout(() => {
+					this.router.navigate(["/dashboard"]);
+				}, 1000);
 			},
 			error: (e) => {
 				this.errors = e.error.non_field_errors;

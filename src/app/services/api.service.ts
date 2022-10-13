@@ -16,6 +16,7 @@ export class ApiService {
 	}
 
 	isLoggedIn() {
+		console.log(localStorage.getItem("token"));
 		return (
 			localStorage.getItem("token") !== null &&
 			localStorage.getItem("token") !== undefined
@@ -62,5 +63,20 @@ export class ApiService {
 
 	getSummary() {
 		return this.http.get(this.appConfig.DASHBOARD_SUMMARAY);
+	}
+
+	getBills() {
+		return this.http.get(this.appConfig.BILLS);
+	}
+
+	getBill(id: number) {
+		return this.http.get(`${this.appConfig.BILLS}${id}/`);
+	}
+
+	saveBills(data: {}) {
+		return this.http.post(this.appConfig.BILLS, data);
+	}
+	updateBills(id: number, data: {}) {
+		return this.http.put(`${this.appConfig.BILLS}${id}/`, data);
 	}
 }

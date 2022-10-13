@@ -7,14 +7,15 @@ const routes: Routes = [
 		path: "auth",
 		loadChildren: () => import("./auth/auth.module").then((a) => a.AuthModule),
 	},
-	{
-		path: "**",
-		redirectTo: "auth",
-	},
+
 	{
 		path: "",
 		loadChildren: () => import("./base/base.module").then((b) => b.BaseModule),
 		canActivate: [AuthGuard],
+	},
+	{
+		path: "**",
+		redirectTo: "dashboard",
 	},
 ];
 

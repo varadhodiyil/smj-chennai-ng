@@ -10,8 +10,12 @@ import { ApiService } from "./api.service";
 	providedIn: "root",
 })
 export class AuthGuard implements CanActivate {
-	constructor(private authService: ApiService) {}
+	constructor(private authService: ApiService, private router: Router) {}
 	canActivate(next: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
-		return this.authService.isLoggedIn();
+		const isLoggedIn = this.authService.isLoggedIn();
+		if (!isLoggedIn) {
+			this.router.navigate(["/auth/login"]);
+		}
+		return isLoggedIn;
 	}
 }
