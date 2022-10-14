@@ -1,10 +1,10 @@
 <div class="row">
 	<div class="col-2"></div>
-	<form class="form-inline col-8" [formGroup]="documentForm">
+	<form class="form-inline col-md-8 col-12" [formGroup]="documentForm">
 		<div class="form-group row col-12 mb-3">
 			<div class="col-sm-12 row mb-3 mb-sm-0">
-				<label class="col-3">Type</label>
-				<select class="form-control col-9" formControlName="type">
+				<label class="col-md-3 col-12">Type</label>
+				<select class="form-control col-md-9 col-12" formControlName="type">
 					<option value="">----</option>
 					<option value="docket">Docket</option>
 					<option value="rr">RR</option>
@@ -14,10 +14,10 @@
 
 		<div class="form-group row col-12 mb-3">
 			<div class="col-sm-12 row mb-3 mb-sm-0">
-				<label class="col-3">Party</label>
+				<label class="col-md-3 col-12">Party</label>
 				<input
 					type="text"
-					class="form-control col-9 form-control-user"
+					class="form-control col-md-9 col-12 form-control-user"
 					formControlName="party"
 					placeholder="Party Name"
 				/>
@@ -25,10 +25,10 @@
 		</div>
 		<div class="form-group row col-12 mb-3">
 			<div class="col-sm-12 row mb-3 mb-sm-0">
-				<label class="col-3">Document Number</label>
+				<label class="col-md-3 col-12">Document Number</label>
 				<input
 					type="text"
-					class="form-control col-9 form-control-user"
+					class="form-control col-md-9 col-12 form-control-user"
 					formControlName="docket_number"
 					placeholder="Docket Number"
 					(blur)="getDocument()"
@@ -37,10 +37,10 @@
 		</div>
 		<div class="form-group row col-12 mb-3">
 			<div class="col-sm-12 row mb-3 mb-sm-0">
-				<label class="col-3">Document Date</label>
+				<label class="col-md-3 col-12">Document Date</label>
 				<input
 					type="date"
-					class="form-control col-9 form-control-user"
+					class="form-control col-md-9 col-12 form-control-user"
 					formControlName="docket_date"
 					placeholder="Document Date"
 					[max]="now"
@@ -49,10 +49,10 @@
 		</div>
 		<div class="form-group row col-12 mb-3">
 			<div class="col-sm-12 row mb-3 mb-sm-0">
-				<label class="col-3">Number of Packets</label>
+				<label class="col-md-3 col-12">Number of Packets</label>
 				<input
 					type="number"
-					class="form-control col-9 form-control-user"
+					class="form-control col-md-9 col-12 form-control-user"
 					formControlName="no_of_pack"
 					placeholder="Number of Packets"
 				/>
@@ -61,10 +61,10 @@
 
 		<div class="form-group row col-12 mb-3">
 			<div class="col-sm-12 row mb-3 mb-sm-0">
-				<label class="col-3">Station</label>
+				<label class="col-md-3 col-12">Station</label>
 				<input
 					type="text"
-					class="form-control col-9 form-control-user"
+					class="form-control col-md-9 col-12 form-control-user"
 					formControlName="station"
 					placeholder="Station"
 				/>
@@ -73,10 +73,10 @@
 
 		<div class="form-group row col-12 mb-3">
 			<div class="col-sm-12 row mb-3 mb-sm-0">
-				<label class="col-3">Weight</label>
+				<label class="col-md-3 col-12">Weight</label>
 				<input
 					type="number"
-					class="form-control col-9 form-control-user"
+					class="form-control col-md-9 col-12 form-control-user"
 					placeholder="Weight"
 					min="0"
 					formControlName="weight"
@@ -85,11 +85,11 @@
 		</div>
 		<div class="form-group row col-12 mb-3">
 			<div class="col-sm-12 row mb-3 mb-sm-0">
-				<label class="col-3">Rate per KG</label>
+				<label class="col-md-3 col-12">Rate per KG</label>
 				<input
 					type="number"
 					min="0"
-					class="form-control col-9 form-control-user"
+					class="form-control col-md-9 col-12 form-control-user"
 					placeholder="Rate per KG"
 					formControlName="rate"
 				/>
@@ -97,11 +97,11 @@
 		</div>
 		<div class="form-group row col-12 mb-3">
 			<div class="col-sm-12 row mb-3 mb-sm-0">
-				<label class="col-3">Charge</label>
+				<label class="col-md-3 col-12">Charge</label>
 				<input
 					type="number"
 					min="0"
-					class="form-control col-9 form-control-user"
+					class="form-control col-md-9 col-12 form-control-user"
 					placeholder="Charge"
 					formControlName="charge"
 				/>
@@ -109,11 +109,11 @@
 		</div>
 		<div class="form-group row col-12 mb-3">
 			<div class="col-sm-12 row mb-3 mb-sm-0">
-				<label class="col-3">Other Charge</label>
+				<label class="col-md-3 col-12">Other Charge</label>
 				<input
 					type="number"
 					min="0"
-					class="form-control col-9 form-control-user"
+					class="form-control col-md-9 col-12 form-control-user"
 					placeholder="Other Charge"
 					formControlName="other_charge"
 				/>
@@ -122,10 +122,10 @@
 
 		<div class="form-group row col-12 mb-3">
 			<div class="col-sm-12 row mb-3 mb-sm-0">
-				<label class="col-3">Dispatch Mode</label>
+				<label class="col-md-3 col-12">Dispatch Mode</label>
 				<input
 					type="text"
-					class="form-control col-9 form-control-user"
+					class="form-control col-md-9 col-12 form-control-user"
 					placeholder="Dispatch Mode"
 					formControlName="dispatch"
 				/>
@@ -134,8 +134,8 @@
 
 		<div class="form-group row col-12 mb-3">
 			<div class="col-sm-12 row mb-3 mb-sm-0">
-				<label class="col-3">Payment Mode</label>
-				<select class="form-control col-9" formControlName="pay_mode">
+				<label class="col-md-3 col-12">Payment Mode</label>
+				<select class="form-control col-md-9 col-12" formControlName="pay_mode">
 					<option value="">----</option>
 					<option value="TBB">To Be Billed</option>
 					<option value="ToPay">ToPay</option>
@@ -144,7 +144,7 @@
 			</div>
 		</div>
 		<div class="form-check row col-12 mb-3">
-			<label class="col-3">Service Type </label>
+			<label class="col-md-3 col-12">Service Type </label>
 			<div class="row col-9">
 				<div class="col-6">
 					<label class="radio-inline"
@@ -170,24 +170,24 @@
 		</div>
 		<div class="form-group row col-12 mb-3">
 			<div class="col-sm-12 row mb-3 mb-sm-0">
-				<label class="col-3">CGST</label>
+				<label class="col-md-3 col-12">CGST</label>
 				<input
 					type="text"
 					formControlName="cgst"
 					readonly
-					class="form-control col-9 form-control-user"
+					class="form-control col-md-9 col-12 form-control-user"
 					placeholder="CGST"
 				/>
 			</div>
 		</div>
 		<div class="form-group row col-12 mb-3">
 			<div class="col-sm-12 row mb-3 mb-sm-0">
-				<label class="col-3">SGST</label>
+				<label class="col-md-3 col-12">SGST</label>
 				<input
 					type="text"
 					readonly
 					formControlName="sgst"
-					class="form-control col-9 form-control-user"
+					class="form-control col-md-9 col-12 form-control-user"
 					placeholder="SGST"
 				/>
 			</div>
@@ -195,12 +195,12 @@
 
 		<div class="form-group row col-12 mb-3">
 			<div class="col-sm-12 row mb-3 mb-sm-0">
-				<label class="col-3">IGST</label>
+				<label class="col-md-3 col-12">IGST</label>
 				<input
 					type="text"
 					formControlName="igst"
 					readonly
-					class="form-control col-9 form-control-user"
+					class="form-control col-md-9 col-12 form-control-user"
 					placeholder="IGST"
 				/>
 			</div>
@@ -208,11 +208,11 @@
 
 		<div class="form-group row col-12 mb-3">
 			<div class="col-sm-12 row mb-3 mb-sm-0">
-				<label class="col-3">Bill Status</label>
+				<label class="col-md-3 col-12">Bill Status</label>
 				<input
 					type="text"
 					formControlName="bill_status"
-					class="form-control col-9 form-control-user"
+					class="form-control col-md-9 col-12 form-control-user"
 					placeholder="Bill Status"
 				/>
 			</div>
@@ -220,33 +220,33 @@
 
 		<div class="form-group row col-12 mb-3">
 			<div class="col-sm-12 row mb-3 mb-sm-0">
-				<label class="col-3">Remarks</label>
+				<label class="col-md-3 col-12">Remarks</label>
 				<input
 					type="text"
 					formControlName="remarks"
-					class="form-control col-9 form-control-user"
+					class="form-control col-md-9 col-12 form-control-user"
 					placeholder="Remarks"
 				/>
 			</div>
 		</div>
 		<div class="form-group row col-12 mb-3">
 			<div class="col-sm-12 row mb-3 mb-sm-0">
-				<label class="col-3">Round Amount</label>
+				<label class="col-md-3 col-12">Round Amount</label>
 				<input
 					type="text"
 					formControlName="round_amt"
-					class="form-control col-9 form-control-user"
+					class="form-control col-md-9 col-12 form-control-user"
 					placeholder="Round Amount"
 				/>
 			</div>
 		</div>
 		<div class="form-group row col-12 mb-3">
 			<div class="col-sm-12 row mb-3 mb-sm-0">
-				<label class="col-3">Paid</label>
+				<label class="col-md-3 col-12">Paid</label>
 				<input
 					type="number"
 					formControlName="paid"
-					class="form-control col-9 form-control-user"
+					class="form-control col-md-9 col-12 form-control-user"
 					placeholder="Amount paid"
 				/>
 			</div>
@@ -254,12 +254,12 @@
 
 		<div class="form-group row col-12 mb-3">
 			<div class="col-sm-12 row mb-3 mb-sm-0">
-				<label class="col-3">Total</label>
+				<label class="col-md-3 col-12">Total</label>
 				<input
 					type="number"
 					readonly
 					formControlName="total"
-					class="form-control col-9 form-control-user"
+					class="form-control col-md-9 col-12 form-control-user"
 					placeholder="Total"
 				/>
 			</div>

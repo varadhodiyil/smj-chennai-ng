@@ -1,12 +1,12 @@
 <div class="row">
 	<div class="col-2"></div>
-	<form class="form-inline col-8" [formGroup]="billsForm">
+	<form class="form-inline col-md-8 col-12" [formGroup]="billsForm">
 		<div class="form-group row col-12 mb-3">
 			<div class="col-sm-12 row mb-3 mb-sm-0">
-				<label class="col-3">Bill Number</label>
+				<label class="col-md-3 col-12">Bill Number</label>
 				<input
 					type="number"
-					class="form-control col-9 form-control-user"
+					class="form-control col-md-9 col-12 form-control-user"
 					formControlName="bill_number"
 					placeholder="Bill Number"
 				/>
@@ -15,10 +15,10 @@
 
 		<div class="form-group row col-12 mb-3">
 			<div class="col-sm-12 row mb-3 mb-sm-0">
-				<label class="col-3">Party</label>
+				<label class="col-md-3 col-12">Party</label>
 				<input
 					type="text"
-					class="form-control col-9 form-control-user basicAutoComplete"
+					class="form-control col-md-9 col-12 form-control-user basicAutoComplete"
 					formControlName="party"
 					placeholder="Party Name"
 				/>
@@ -27,11 +27,11 @@
 
 		<div class="form-group row col-12 mb-3">
 			<div class="col-sm-12 row mb-3 mb-sm-0">
-				<label class="col-3">Bill Amount</label>
+				<label class="col-md-3 col-12">Bill Amount</label>
 				<input
 					type="number"
 					step="0.01"
-					class="form-control col-9 form-control-user"
+					class="form-control col-md-9 col-12 form-control-user"
 					formControlName="bill_amount"
 					placeholder="Bill Amount"
 				/>
@@ -40,8 +40,11 @@
 
 		<div class="form-group row col-12 mb-3">
 			<div class="col-sm-12 row mb-3 mb-sm-0">
-				<label class="col-3">Payment Mode</label>
-				<select class="form-control col-9" formControlName="payment_mode">
+				<label class="col-md-3 col-12">Payment Mode</label>
+				<select
+					class="form-control col-md-9 col-12"
+					formControlName="payment_mode"
+				>
 					<option value="">----</option>
 					<option value="cash">Cash</option>
 					<option value="cheque">Cheque</option>
@@ -52,11 +55,11 @@
 
 		<div class="form-group row col-12 mb-3">
 			<div class="col-sm-12 row mb-3 mb-sm-0">
-				<label class="col-3">Payment Received At</label>
+				<label class="col-md-3 col-12">Payment Received At</label>
 				<input
 					type="date"
 					[max]="now"
-					class="form-control col-9 form-control-user"
+					class="form-control col-md-9 col-12 form-control-user"
 					formControlName="payment_received_at"
 					placeholder="Payment Received At"
 				/>
@@ -65,11 +68,11 @@
 
 		<div class="form-group row col-12 mb-3">
 			<div class="col-sm-12 row mb-3 mb-sm-0">
-				<label class="col-3">Payment Received</label>
+				<label class="col-md-3 col-12">Payment Received</label>
 				<input
 					type="number"
 					step="0.01"
-					class="form-control col-9 form-control-user"
+					class="form-control col-md-9 col-12 form-control-user"
 					formControlName="payment_received"
 					placeholder="Payment Received"
 				/>
@@ -78,11 +81,11 @@
 
 		<div class="form-group row col-12 mb-3">
 			<div class="col-sm-12 row mb-3 mb-sm-0">
-				<label class="col-3">Balance</label>
+				<label class="col-md-3 col-12">Balance</label>
 				<input
 					type="number"
 					step="0.01"
-					class="form-control col-9 form-control-user"
+					class="form-control col-md-9 col-12 form-control-user"
 					formControlName="balance"
 					placeholder="Balance"
 				/>
@@ -91,10 +94,10 @@
 
 		<div class="form-group row col-12 mb-3">
 			<div class="col-sm-12 row mb-3 mb-sm-0">
-				<label class="col-3">Remarks </label>
+				<label class="col-md-3 col-12">Remarks </label>
 				<input
 					type="text"
-					class="form-control col-9 form-control-user"
+					class="form-control col-md-9 col-12 form-control-user"
 					formControlName="remarks"
 					placeholder="Remarks"
 				/>

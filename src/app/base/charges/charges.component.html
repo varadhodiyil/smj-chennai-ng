@@ -1,11 +1,11 @@
 <div class="row container">
 	<div class="col-2"></div>
-	<form class="form-inline col-9" [formGroup]="chargesForm">
+	<form class="form-inline col-md-8 col-12" [formGroup]="chargesForm">
 		<div class="form-group row col-12 mb-3">
 			<div class="col-sm-12 row mb-3 mb-sm-0">
-				<label class="col-3">Document Number</label>
+				<label class="col-md-3 col-12">Document Number</label>
 				<input
-					class="form-control col-9"
+					class="form-control col-md-9 col-12"
 					type="number"
 					formControlName="document"
 					autocomplete="off"
@@ -15,9 +15,9 @@
 
 		<div class="form-group row col-12 mb-3">
 			<div class="col-sm-12 row mb-3 mb-sm-0">
-				<label class="col-3">Party</label>
+				<label class="col-md-3 col-12">Party</label>
 				<input
-					class="form-control col-9 basicAutoComplete"
+					class="form-control col-md-9 col-12 basicAutoComplete"
 					type="text"
 					autocomplete="off"
 					formControlName="party"
@@ -27,10 +27,10 @@
 
 		<div class="form-group row col-12 mb-3">
 			<div class="col-sm-12 row mb-3 mb-sm-0">
-				<label class="col-3">Payment Date</label>
+				<label class="col-md-3 col-12">Payment Date</label>
 				<input
 					type="date"
-					class="form-control col-9 form-control-user"
+					class="form-control col-md-9 col-12 form-control-user"
 					formControlName="lr_date"
 					placeholder="Payment Date"
 					[max]="now"
@@ -40,10 +40,10 @@
 
 		<div class="form-group row col-12 mb-3">
 			<div class="col-sm-12 row mb-3 mb-sm-0">
-				<label class="col-3">Dispatch Expense</label>
+				<label class="col-md-3 col-12">Dispatch Expense</label>
 				<input
 					type="number"
-					class="form-control col-9 form-control-user"
+					class="form-control col-md-9 col-12 form-control-user"
 					formControlName="dispatch_expense"
 					placeholder="Dispatch Expense"
 				/>
@@ -51,10 +51,10 @@
 		</div>
 		<div class="form-group row col-12 mb-3">
 			<div class="col-sm-12 row mb-3 mb-sm-0">
-				<label class="col-3">Dispatch Paid On</label>
+				<label class="col-md-3 col-12">Dispatch Paid On</label>
 				<input
 					type="date"
-					class="form-control col-9 form-control-user"
+					class="form-control col-md-9 col-12 form-control-user"
 					formControlName="dispatch_paid_on"
 					placeholder="Dispatch Paid On"
 					[max]="now"
@@ -63,10 +63,10 @@
 		</div>
 		<div class="form-group row col-12 mb-3">
 			<div class="col-sm-12 row mb-3 mb-sm-0">
-				<label class="col-3">Door Delivery Expense</label>
+				<label class="col-md-3 col-12">Door Delivery Expense</label>
 				<input
 					type="number"
-					class="form-control col-9 form-control-user"
+					class="form-control col-md-9 col-12 form-control-user"
 					formControlName="door_delivery_expense"
 					placeholder="Door Delivery Expense"
 				/>
@@ -74,10 +74,10 @@
 		</div>
 		<div class="form-group row col-12 mb-3">
 			<div class="col-sm-12 row mb-3 mb-sm-0">
-				<label class="col-3">Door Delivery Paid On</label>
+				<label class="col-md-3 col-12">Door Delivery Paid On</label>
 				<input
 					type="date"
-					class="form-control col-9 form-control-user"
+					class="form-control col-md-9 col-12 form-control-user"
 					formControlName="door_delivery_paid_on"
 					placeholder="Door Delivery Paid On"
 					[max]="now"
@@ -87,10 +87,10 @@
 
 		<div class="form-group row col-12 mb-3">
 			<div class="col-sm-12 row mb-3 mb-sm-0">
-				<label class="col-3">Pay Method</label>
+				<label class="col-md-3 col-12">Pay Method</label>
 				<input
 					type="text"
-					class="form-control col-9 form-control-user"
+					class="form-control col-md-9 col-12 form-control-user"
 					formControlName="pay_method"
 					placeholder="Payment Method"
 				/>
@@ -99,10 +99,10 @@
 
 		<div class="form-group row col-12 mb-3">
 			<div class="col-sm-12 row mb-3 mb-sm-0">
-				<label class="col-3">Any Other Expense</label>
+				<label class="col-md-3 col-12">Any Other Expense</label>
 				<input
 					type="number"
-					class="form-control col-9 form-control-user"
+					class="form-control col-md-9 col-12 form-control-user"
 					formControlName="any_other_expense"
 					placeholder="Any Other Expense"
 				/>
@@ -110,10 +110,10 @@
 		</div>
 		<div class="form-group row col-12 mb-3">
 			<div class="col-sm-12 row mb-3 mb-sm-0">
-				<label class="col-3">Any Other Expense Paid On</label>
+				<label class="col-md-3 col-12">Any Other Expense Paid On</label>
 				<input
 					type="date"
-					class="form-control col-9 form-control-user"
+					class="form-control col-md-9 col-12 form-control-user"
 					formControlName="any_other_expense_paid_on"
 					placeholder="Payment Date"
 					[max]="now"
@@ -122,10 +122,10 @@
 		</div>
 		<div class="form-group row col-12 mb-3">
 			<div class="col-sm-12 row mb-3 mb-sm-0">
-				<label class="col-3">Any Other Expense Payment Method</label>
+				<label class="col-md-3 col-12">Any Other Expense Payment Method</label>
 				<input
 					type="text"
-					class="form-control col-9 form-control-user"
+					class="form-control col-md-9 col-12 form-control-user"
 					formControlName="any_other_expense_pay_method"
 					placeholder="Payment Date"
 					[max]="now"
@@ -134,10 +134,10 @@
 		</div>
 		<div class="form-group row col-12 mb-3">
 			<div class="col-sm-12 row mb-3 mb-sm-0">
-				<label class="col-3">Total</label>
+				<label class="col-md-3 col-12">Total</label>
 				<input
 					type="number"
-					class="form-control col-9 form-control-user"
+					class="form-control col-md-9 col-12 form-control-user"
 					formControlName="total"
 					placeholder="Payment Date"
 				/>
@@ -146,10 +146,10 @@
 
 		<div class="form-group row col-12 mb-3">
 			<div class="col-sm-12 row mb-3 mb-sm-0">
-				<label class="col-3">Paid</label>
+				<label class="col-md-3 col-12">Paid</label>
 				<input
 					type="number"
-					class="form-control col-9 form-control-user"
+					class="form-control col-md-9 col-12 form-control-user"
 					formControlName="paid"
 					placeholder="Payment Date"
 				/>
