@@ -4,8 +4,8 @@
 
 export const environment = {
 	production: false,
-	// host: "https://smjchennai.com/api/",
-	host: "http://localhost:8000",
+	host: "https://smjchennai.com/api/",
+	// host: "http://localhost:8000",
 };
 
 /*

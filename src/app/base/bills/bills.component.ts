@@ -2,7 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { ActivatedRoute, ParamMap } from "@angular/router";
 import { ApiService } from "src/app/services/api.service";
-
+declare const $: any;
 @Component({
 	selector: "app-bills",
 	templateUrl: "./bills.component.html",
@@ -50,6 +50,34 @@ export class BillsComponent implements OnInit {
 					this.billsForm.controls["bill_amount"].value -
 						this.billsForm.controls["payment_received"].value
 				);
+		});
+
+		$(document).ready(() => {
+			$.noConflict();
+			const that = this;
+			$(".basicAutoComplete").autoComplete({
+				resolver: "custom",
+				events: {
+					search: function (qry: any, callback: (arg0: any) => void) {
+						// let's do a custom ajax call
+						$.ajax(that.apiService.PARTIES, {
+							data: { search: qry },
+						}).done(function (res: { results: any }) {
+							const results = res.results.map((e: any) => {
+								return { text: e["name"], id: e["id"] };
+							});
+							callback(results);
+						});
+					},
+				},
+			});
+
+			$(".basicAutoComplete").on(
+				"autocomplete.select",
+				function (evt: any, item: any) {
+					that.billsForm.controls["party"].setValue(item.text);
+				}
+			);
 		});
 	}
 
